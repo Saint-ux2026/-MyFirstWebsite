@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Science Fun Facts</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f8f1e7, #ffe5d1);
+      color: #3b2a1a;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      max-width: 720px;
+      width: 100%;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(91, 63, 37, 0.16);
+      padding: 32px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 2.5rem;
+      letter-spacing: -0.04em;
+    }
+
+    p.description {
+      margin: 0 0 28px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #67543d;
+    }
+
+    .fact {
+      font-size: 1.35rem;
+      line-height: 1.8;
+      padding: 24px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fff7f1, #fff0e2);
+      color: #443526;
+      margin-bottom: 28px;
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    button {
+      background: #d35c40;
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 16px 28px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(211, 92, 64, 0.22);
+    }
+
+    .footer {
+      margin-top: 24px;
+      color: #7a6a5a;
+      font-size: 0.94rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Food Science Fun Facts</h1>
+    <p class="description">Explore a new random fact from the science behind what we eat. Click the button to reveal a tasty nugget of food knowledge.</p>
+    <div class="fact" id="factDisplay">Click the button to see a fun food science fact.</div>
+    <button id="newFactButton">Show another fact</button>
+    <p class="footer">Built to celebrate the science of flavor, preservation, and nutrition.</p>
+  </div>
+
+  <script>
+    const facts = [
+      "Chocolate was once used as currency in ancient Mesoamerican cultures like the Maya and Aztec.",
+      "Honey is the only natural food that never spoils; edible honey has been recovered from ancient tombs.",
+      "Aged cheese contains umami compounds that make it taste richer and more savory than fresh cheese.",
+      "The Maillard reaction is what makes browned foods like toast, roasted coffee, and grilled meat smell and taste so delicious.",
+      "Ceviche is 'cooked' by citrus acid, which denatures proteins in fish without applying heat.",
+      "Trans fats can form naturally in small amounts in dairy and meat, but most unhealthy trans fats come from industrial hydrogenation.",
+      "Fermented foods like kimchi, yogurt, and kombucha rely on microbes to produce beneficial acids, vitamins, and flavors.",
+      "The color of an egg yolk depends on the hen's diet: deeper yellow or orange yolks come from more carotenoid-rich feed.",
+      "Nitrogen gas is used to package some snacks and coffee to keep them fresh by removing oxygen that can cause spoilage.",
+      "Freeze-drying preserves food by removing water at low temperature, keeping texture, flavor, and nutrients intact.",
+      "Salt lowers the freezing point of water, which is why salt is used to make ice cream churn faster in traditional ice cream makers.",
+      "Gluten is a protein network in wheat that gives bread dough elasticity and helps baked goods rise.",
+      "Vanillin is the main flavor compound in vanilla, but most commercial vanilla flavoring is made from synthetic vanillin.",
+      "Enzymatic browning causes cut fruits like apples and bananas to turn brown, and lemon juice can slow it by lowering pH.",
+      "Most of the aroma in cooked food comes from volatile compounds that evaporate and travel to your nose while you chew."
+    ];
+
+    const factDisplay = document.getElementById('factDisplay');
+    const button = document.getElementById('newFactButton');
+
+    function showFact() {
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      factDisplay.textContent = facts[randomIndex];
+    }
+
+    button.addEventListener('click', showFact);
+  </script>
+</body>
+</html>
